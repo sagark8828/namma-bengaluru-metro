@@ -19,23 +19,101 @@
 
     <main>
 
-        <section class="hero">
+        <section class="search-box">
+
             <h2>Plan Your Metro Journey</h2>
-            <p>Find the best route between Bengaluru Metro stations.</p>
 
-            <div class="route-box">
+            <label for="fromStation">From Station</label>
 
-                <label>From Station</label>
-                <input type="text" id="fromStation"
-                    placeholder="Enter starting station">
+            <select id="fromStation">
+                <option value="">Select starting station</option>
 
-                <label>To Station</label>
-                <input type="text" id="toStation"
-                    placeholder="Enter destination station">
+                <option>Whitefield (Kadugodi)</option>
+                <option>Hopefarm Channasandra</option>
+                <option>Kadugodi Tree Park</option>
+                <option>Pattandur Agrahara</option>
+                <option>Sri Sathya Sai Hospital</option>
+                <option>Kundalahalli</option>
+                <option>Seetharampalya</option>
+                <option>Hoodi</option>
+                <option>Garudacharpalya</option>
+                <option>Singayyanapalya</option>
+                <option>K.R. Pura (Krishnarajapura)</option>
+                <option>Benniganahalli</option>
+                <option>Baiyappanahalli</option>
+                <option>Swami Vivekananda Road</option>
+                <option>Indiranagar</option>
+                <option>Halasuru</option>
+                <option>Trinity</option>
+                <option>M.G. Road</option>
+                <option>Cubbon Park</option>
+                <option>Vidhana Soudha / Dr. B.R. Ambedkar Station</option>
+                <option>Sir M. Visvesvaraya Station / Central College</option>
+                <option>Nadaprabhu Kempegowda Station / Majestic</option>
+                <option>KSR Bengaluru City Railway Station</option>
+                <option>Magadi Road</option>
+                <option>Sri Balagangadharanatha Swamiji Station / Hosahalli</option>
+                <option>Vijayanagara</option>
+                <option>Govindaraja Nagar</option>
+                <option>Attiguppe</option>
+                <option>Deepanjali Nagar</option>
+                <option>Mysuru Road</option>
+                <option>Pantharapalya / Nayandahalli</option>
+                <option>Rajarajeshwari Nagar</option>
+                <option>Jnanabharathi</option>
+                <option>Pattanagere</option>
+                <option>Kengeri Bus Terminal</option>
+                <option>Kengeri</option>
+                <option>Challaghatta</option>
+            </select>
 
-                <button onclick="findRoute()">Find Route</button>
 
-            </div>
+            <label for="toStation">To Station</label>
+
+            <select id="toStation">
+                <option value="">Select destination station</option>
+
+                <option>Whitefield (Kadugodi)</option>
+                <option>Hopefarm Channasandra</option>
+                <option>Kadugodi Tree Park</option>
+                <option>Pattandur Agrahara</option>
+                <option>Sri Sathya Sai Hospital</option>
+                <option>Kundalahalli</option>
+                <option>Seetharampalya</option>
+                <option>Hoodi</option>
+                <option>Garudacharpalya</option>
+                <option>Singayyanapalya</option>
+                <option>K.R. Pura (Krishnarajapura)</option>
+                <option>Benniganahalli</option>
+                <option>Baiyappanahalli</option>
+                <option>Swami Vivekananda Road</option>
+                <option>Indiranagar</option>
+                <option>Halasuru</option>
+                <option>Trinity</option>
+                <option>M.G. Road</option>
+                <option>Cubbon Park</option>
+                <option>Vidhana Soudha / Dr. B.R. Ambedkar Station</option>
+                <option>Sir M. Visvesvaraya Station / Central College</option>
+                <option>Nadaprabhu Kempegowda Station / Majestic</option>
+                <option>KSR Bengaluru City Railway Station</option>
+                <option>Magadi Road</option>
+                <option>Sri Balagangadharanatha Swamiji Station / Hosahalli</option>
+                <option>Vijayanagara</option>
+                <option>Govindaraja Nagar</option>
+                <option>Attiguppe</option>
+                <option>Deepanjali Nagar</option>
+                <option>Mysuru Road</option>
+                <option>Pantharapalya / Nayandahalli</option>
+                <option>Rajarajeshwari Nagar</option>
+                <option>Jnanabharathi</option>
+                <option>Pattanagere</option>
+                <option>Kengeri Bus Terminal</option>
+                <option>Kengeri</option>
+                <option>Challaghatta</option>
+            </select>
+
+
+            <button onclick="findRoute()">Find Route</button>
 
             <div id="result"></div>
 
