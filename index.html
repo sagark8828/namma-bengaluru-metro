@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Namma Bengaluru Metro</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>🚇 Namma Bengaluru Metro</h1>
+        <p>Route Finder • Fare • Journey Time</p>
+    </header>
+
+    <main>
+
+        <section class="hero">
+            <h2>Plan Your Metro Journey</h2>
+            <p>Find the best route between Bengaluru Metro stations.</p>
+
+            <div class="route-box">
+
+                <label>From Station</label>
+                <input type="text" id="fromStation"
+                    placeholder="Enter starting station">
+
+                <label>To Station</label>
+                <input type="text" id="toStation"
+                    placeholder="Enter destination station">
+
+                <button onclick="findRoute()">Find Route</button>
+
+            </div>
+
+            <div id="result"></div>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
