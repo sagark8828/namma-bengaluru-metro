@@ -2,127 +2,136 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Namma Bengaluru Metro</title>
 
     <link rel="stylesheet" href="style.css">
+
 </head>
+
 
 <body>
 
     <header>
+
         <h1>🚇 Namma Bengaluru Metro</h1>
-        <p>Route Finder • Fare • Journey Time</p>
+
+        <p>Route Finder • Fare • Journey Time • Station Search</p>
+
     </header>
+
 
     <main>
 
-        <section class="search-box">
+        <section class="route-box">
 
             <h2>Plan Your Metro Journey</h2>
 
-            <label for="fromStation">From Station</label>
 
-            <select id="fromStation">
-                <option value="">Select starting station</option>
+            <!-- FROM -->
 
-                <option>Whitefield (Kadugodi)</option>
-                <option>Hopefarm Channasandra</option>
-                <option>Kadugodi Tree Park</option>
-                <option>Pattandur Agrahara</option>
-                <option>Sri Sathya Sai Hospital</option>
-                <option>Kundalahalli</option>
-                <option>Seetharampalya</option>
-                <option>Hoodi</option>
-                <option>Garudacharpalya</option>
-                <option>Singayyanapalya</option>
-                <option>K.R. Pura (Krishnarajapura)</option>
-                <option>Benniganahalli</option>
-                <option>Baiyappanahalli</option>
-                <option>Swami Vivekananda Road</option>
-                <option>Indiranagar</option>
-                <option>Halasuru</option>
-                <option>Trinity</option>
-                <option>M.G. Road</option>
-                <option>Cubbon Park</option>
-                <option>Vidhana Soudha / Dr. B.R. Ambedkar Station</option>
-                <option>Sir M. Visvesvaraya Station / Central College</option>
-                <option>Nadaprabhu Kempegowda Station / Majestic</option>
-                <option>KSR Bengaluru City Railway Station</option>
-                <option>Magadi Road</option>
-                <option>Sri Balagangadharanatha Swamiji Station / Hosahalli</option>
-                <option>Vijayanagara</option>
-                <option>Govindaraja Nagar</option>
-                <option>Attiguppe</option>
-                <option>Deepanjali Nagar</option>
-                <option>Mysuru Road</option>
-                <option>Pantharapalya / Nayandahalli</option>
-                <option>Rajarajeshwari Nagar</option>
-                <option>Jnanabharathi</option>
-                <option>Pattanagere</option>
-                <option>Kengeri Bus Terminal</option>
-                <option>Kengeri</option>
-                <option>Challaghatta</option>
-            </select>
+            <label for="fromStation">
+                From Station
+            </label>
+
+            <input type="text" id="fromStation" placeholder="🔍 Search starting station" autocomplete="off">
+
+            <div id="fromSuggestions" class="suggestions">
+            </div>
 
 
-            <label for="toStation">To Station</label>
+            <!-- TO -->
 
-            <select id="toStation">
-                <option value="">Select destination station</option>
+            <label for="toStation">
+                To Station
+            </label>
 
-                <option>Whitefield (Kadugodi)</option>
-                <option>Hopefarm Channasandra</option>
-                <option>Kadugodi Tree Park</option>
-                <option>Pattandur Agrahara</option>
-                <option>Sri Sathya Sai Hospital</option>
-                <option>Kundalahalli</option>
-                <option>Seetharampalya</option>
-                <option>Hoodi</option>
-                <option>Garudacharpalya</option>
-                <option>Singayyanapalya</option>
-                <option>K.R. Pura (Krishnarajapura)</option>
-                <option>Benniganahalli</option>
-                <option>Baiyappanahalli</option>
-                <option>Swami Vivekananda Road</option>
-                <option>Indiranagar</option>
-                <option>Halasuru</option>
-                <option>Trinity</option>
-                <option>M.G. Road</option>
-                <option>Cubbon Park</option>
-                <option>Vidhana Soudha / Dr. B.R. Ambedkar Station</option>
-                <option>Sir M. Visvesvaraya Station / Central College</option>
-                <option>Nadaprabhu Kempegowda Station / Majestic</option>
-                <option>KSR Bengaluru City Railway Station</option>
-                <option>Magadi Road</option>
-                <option>Sri Balagangadharanatha Swamiji Station / Hosahalli</option>
-                <option>Vijayanagara</option>
-                <option>Govindaraja Nagar</option>
-                <option>Attiguppe</option>
-                <option>Deepanjali Nagar</option>
-                <option>Mysuru Road</option>
-                <option>Pantharapalya / Nayandahalli</option>
-                <option>Rajarajeshwari Nagar</option>
-                <option>Jnanabharathi</option>
-                <option>Pattanagere</option>
-                <option>Kengeri Bus Terminal</option>
-                <option>Kengeri</option>
-                <option>Challaghatta</option>
-            </select>
+            <input type="text" id="toStation" placeholder="🔍 Search destination station" autocomplete="off">
+
+            <div id="toSuggestions" class="suggestions">
+            </div>
+            <button id="swapButton" type="button" class="swap-button">
+                ⇅ Swap Stations
+            </button>
+            <button id="clearButton" type="button" class="clear-button">
+                ✕ Clear Search
+            </button>
+
+            <button id="locationButton" type="button">
+                📍 Find Nearest Metro Station
+            </button>
+
+            <div id="nearestStation"></div>
 
 
-            <button onclick="findRoute()">Find Route</button>
+            <!-- STATION DETAILS -->
+
+            <div id="stationDetails"></div>
+
+
+            <!-- FIND ROUTE -->
+
+            <button onclick="findRoute()">
+                🚇 Find Route
+            </button>
+
+
+            <div id="metroMapOverview">
+
+                <h2>🗺️ Bengaluru Metro Map</h2>
+
+                <div class="map-line purple-map">
+                    🟣 Purple Line
+                </div>
+
+                <div class="map-line green-map">
+                    🟢 Green Line
+                </div>
+
+                <div class="map-line yellow-map">
+                    🟡 Yellow Line
+                </div>
+
+            </div>
+
+            <!-- RESULT -->
 
             <div id="result"></div>
+            <!-- ==========================
+     INTERACTIVE METRO MAP
+========================== -->
+
+            <section id="interactiveMetroMap">
+
+                <h2>🗺️ Bengaluru Metro Map</h2>
+
+                <p class="map-subtitle">
+                    Complete station-wise Metro network
+                </p>
+
+                <div id="purpleMap" class="metro-map-line"></div>
+
+                <div id="greenMap" class="metro-map-line"></div>
+
+                <div id="yellowMap" class="metro-map-line"></div>
+
+            </section>
 
         </section>
 
     </main>
 
+
     <script src="script.js"></script>
 
+    <div id="stationPopup" class="station-popup">
+        <button class="close-popup" onclick="closeStationPopup()">✕</button>
+        <div id="popupContent"></div>
+    </div>
 </body>
 
 </html>
